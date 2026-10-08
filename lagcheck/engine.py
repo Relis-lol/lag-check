@@ -24,7 +24,15 @@ def stamp():
 def save(path, data):
     tmp = path.with_suffix(".tmp")
     tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    tmp.replace(path)
+    # A concurrent short Windows reader may temporarily deny replacement.
+    for attempt in range(6):
+        try:
+            tmp.replace(path)
+            return
+        except PermissionError:
+            if attempt == 5:
+                raise
+            time.sleep(0.02)
 
 
 def ps(script, *args):

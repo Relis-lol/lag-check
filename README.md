@@ -10,6 +10,8 @@ die verständliche Auswertung. Kein Konto, keine Telemetrie, kein Optimierer.
 · [Bedienung](docs/USAGE.md) · [Datenschutz](docs/PRIVACY.md)
 · [Grenzen und Risiken](docs/SAFETY.md) · [Technische Quellen](docs/MEASUREMENTS.md)
 
+![Lag Check: Startansicht ohne Messdaten](docs/screenshot.png)
+
 ## In drei Schritten
 
 1. **ZIP entpacken**, den gesamten Ordner behalten und `LagCheck.exe` öffnen.

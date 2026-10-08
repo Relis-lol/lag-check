@@ -14,7 +14,7 @@ from tkinter import filedialog, messagebox, ttk
 
 from . import __version__
 from .analysis import KINDS, format_result, local_time, safe_export
-from .config import DATA
+from .config import DATA, RESOURCES
 
 BG, PANEL, FIELD = "#101923", "#192735", "#223443"
 FG, MUTED, ACCENT, AMBER = "#eff4f8", "#b2c1cf", "#7de2b4", "#ffcd82"
@@ -114,6 +114,7 @@ class App:
     def __init__(self, root):
         self.root = root
         root.title("Lag Check")
+        root.iconbitmap(str(RESOURCES / "app.ico"))
         root.geometry("1120x800")
         root.minsize(960, 720)
         root.configure(bg=BG)
